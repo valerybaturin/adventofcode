@@ -18,7 +18,7 @@ func TestCalculateFloor(t *testing.T) {
 
 	for _, c := range cases {
 		t.Run(fmt.Sprintf("string_%s", c.symbol), func(t *testing.T) {
-			_, actual := CalculateFloor(c.symbol)
+			_, actual := CalculateFloorAndPosition(c.symbol)
 			if actual != c.expected {
 				t.Errorf("expected %v, got %v", c.expected, actual)
 			}

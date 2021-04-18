@@ -13,14 +13,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// Calculating floor and printing answer in terminal.
-	floor, position := CalculateFloor(string(f))
+	// Calculating floor and position, then printing the answer in the terminal.
+	floor, position := CalculateFloorAndPosition(string(f))
 
+	// Now, given the same instructions, find the position of the first character
+	// that causes him to enter the basement (floor -1).
 	fmt.Printf("reached floor %v at position %v", floor, position)
-
 }
 
-func CalculateFloor(s string) (floor int, position int) {
+// CalculateFloorAndPosition calculates floor and returns floor (-1) and position.
+// The name of the function is long but it's clear what it does.
+func CalculateFloorAndPosition(s string) (floor int, position int) {
 	// He starts on the ground floor (floor 0)
 	// and then follows the instructions one character at a time.
 	var f int
@@ -38,11 +41,12 @@ func CalculateFloor(s string) (floor int, position int) {
 
 		// What is the position of the character that causes Santa to first enter the basement?
 		if f == -1 {
+			// Because index starts from 0 increment position to 1.
 			p = i + 1
 			return f, p
 		}
 	}
 
-	// Returning calculated floor and position
+	// Returning calculated floor (should be -1) and position.
 	return f, p
 }
