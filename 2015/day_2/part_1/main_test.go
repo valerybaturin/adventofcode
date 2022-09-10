@@ -55,7 +55,7 @@ func TestParseDimensions(t *testing.T) {
 
 	for _, c := range cases {
 		t.Run(fmt.Sprintf("parsing %s", c.dimension), func(t *testing.T) {
-			actual := ParseDimensions(c.dimension)
+			actual := parseDimensions(c.dimension)
 			if *actual != c.box {
 				t.Fatalf("expected %v, got: %v", c.box, actual)
 			}

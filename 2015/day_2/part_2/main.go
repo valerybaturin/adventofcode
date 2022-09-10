@@ -33,7 +33,7 @@ func (b *Box) Bow() int {
 }
 
 // ParseDimensions parsing input and returning Box type
-func ParseDimensions(s string) *Box {
+func parseDimensions(s string) *Box {
 	d := strings.Split(s, "x")
 	di := make([]int, 3)
 
@@ -66,7 +66,7 @@ func main() {
 	s := bufio.NewScanner(file)
 	for s.Scan() {
 		// Get box dimensions from string
-		r := ParseDimensions(s.Text())
+		r := parseDimensions(s.Text())
 		// Calculate wrapping ribbon
 		length := r.Ribbon() + r.Bow()
 		// Sum to previous value

@@ -14,10 +14,10 @@ func main() {
 	}
 
 	// Calculating floor and printing answer in terminal.
-	fmt.Println(CalculateFloor(string(f)))
+	fmt.Println(calculateFloor(string(f)))
 }
 
-func CalculateFloor(s string) int {
+func calculateFloor(s string) int {
 	// He starts on the ground floor (floor 0)
 	// and then follows the instructions one character at a time.
 	var floor int

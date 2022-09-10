@@ -32,8 +32,8 @@ func (b *Box) SmallArea() int {
 	return s[0] * s[1]
 }
 
-// ParseDimensions parsing input and returning Box type
-func ParseDimensions(s string) *Box {
+// parseDimensions parsing input and returning Box type
+func parseDimensions(s string) *Box {
 	d := strings.Split(s, "x")
 	di := make([]int, 3)
 
@@ -66,7 +66,7 @@ func main() {
 	s := bufio.NewScanner(file)
 	for s.Scan() {
 		// Get box dimensions from string
-		box := ParseDimensions(s.Text())
+		box := parseDimensions(s.Text())
 		// Calculate wrapping paper plus little extra paper for each present
 		area := box.Area() + box.SmallArea()
 		// Sum to previous value

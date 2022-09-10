@@ -14,7 +14,7 @@ func main() {
 	}
 
 	// Calculating floor and position, then printing the answer in the terminal.
-	floor, position := CalculateFloorAndPosition(string(f))
+	floor, position := calculateFloorAndPosition(string(f))
 
 	// Now, given the same instructions, find the position of the first character
 	// that causes him to enter the basement (floor -1).
@@ -23,7 +23,7 @@ func main() {
 
 // CalculateFloorAndPosition calculates floor and returns floor (-1) and position.
 // The name of the function is long but it's clear what it does.
-func CalculateFloorAndPosition(s string) (floor int, position int) {
+func calculateFloorAndPosition(s string) (floor int, position int) {
 	// He starts on the ground floor (floor 0)
 	// and then follows the instructions one character at a time.
 	var f int
